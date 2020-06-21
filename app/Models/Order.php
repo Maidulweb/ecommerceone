@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Model\User;
-use App\Model\OrderProduct;
+use App\Models\User;
+use App\Models\OrderProduct;
 
 class Order extends Model
 {
