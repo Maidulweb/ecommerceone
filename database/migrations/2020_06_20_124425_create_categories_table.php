@@ -18,8 +18,9 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('banner');
-            $table->string('category_id')->default(0);
+            $table->unsignedBigInteger('category_id')->default(0);
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
