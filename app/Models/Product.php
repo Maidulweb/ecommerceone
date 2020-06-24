@@ -8,6 +8,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\ProductImage;
 
 class Product extends Model implements HasMedia
 {
@@ -20,6 +21,10 @@ class Product extends Model implements HasMedia
         return $this->hasOne(Category::class);
     }
 
+    public function product_image()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
 
     protected static function booted() {
 

@@ -7,8 +7,5 @@ use App\Models\Product;
 
 class ProductImage extends Model
 {
-    public function product()
-    {
-        return $this->hasMany(Product::class);
-    }
+    
 }
