@@ -19,4 +19,5 @@ Route::get('/product/{slug}', 'ProductController@show')->name('product.show');
 Route::get('/cart', 'CartController@showcart')->name('cart.show');
 Route::post('/cart/add', 'CartController@addcart')->name('cart.add');
 Route::post('/cart/remove', 'CartController@removecart')->name('cart.remove');
+Route::get('/cart/clear', 'CartController@clearcart')->name('cart.clear');
 

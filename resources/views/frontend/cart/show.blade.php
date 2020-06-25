@@ -2,6 +2,9 @@
 @section('content')
 <div class="container">
  <div class="cart-table">
+     @if(empty($cartindex))
+     <p>Please add product <a href="{{ route('page.index') }}">Product</a></p>
+     @else
     <table class="table">
         <thead>
           <tr>
@@ -47,6 +50,10 @@
                </tr>
         </tbody>
       </table>
+      @endif
+      <div class="">
+          <a href="{{ route('cart.clear') }}" class="btn btn-danger">Clear Cart</a>
+      </div>
  </div>
 </div>
 

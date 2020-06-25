@@ -70,6 +70,12 @@ class CartController extends Controller
 
     }
 
+    public function clearcart ()
+    {
+        session(['cart' => []]);
+        return redirect()->back();
+    }
+
 
 
 }
