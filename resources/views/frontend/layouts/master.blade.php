@@ -11,6 +11,7 @@
             @include('frontend.partials.sidebar')
         </div>
         <div class="col-md-9">
+            @include('frontend.partials.errormessage')
             @yield('content')
         </div>
     </div>

@@ -12,8 +12,8 @@
         </div>
         <div class="col-md-4 text-right line-60">
             @guest
-            <a href="">Login</a>
-            <a href="">Register</a>
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Register</a>
             @endguest
             @auth
             <a href="">Profile</a>

@@ -21,3 +21,13 @@ Route::post('/cart/add', 'CartController@addcart')->name('cart.add');
 Route::post('/cart/remove', 'CartController@removecart')->name('cart.remove');
 Route::get('/cart/clear', 'CartController@clearcart')->name('cart.clear');
 
+
+
+Route::get('/register', 'AuthController@register')->name('register');
+Route::post('/register', 'AuthController@registerprocess')->name('register.process');
+
+Route::get('/register/activate/{token}', 'AuthController@registeractivate')->name('register.activate');
+
+Route::get('/login', 'AuthController@login')->name('login');
+Route::post('/login', 'AuthController@loginprocess')->name('login.process');
+
