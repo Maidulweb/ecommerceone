@@ -17,7 +17,7 @@
             @endguest
             @auth
             <a href="">Profile</a>
-            <a href="">Logout</a>
+            <a href="{{ route('logout') }}">Logout</a>
             @endauth
         </div>
     </div>

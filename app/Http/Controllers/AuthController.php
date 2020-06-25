@@ -101,4 +101,11 @@ class AuthController extends Controller
         $this->setError('Invalid credentials!!!!');
         return redirect()->route('login');
     }
+
+    public function logout ()
+    {
+        Auth::logout();
+        $this->setSuccess('You are logged Out.');
+        return redirect('/');
+    }
 }

@@ -31,3 +31,7 @@ Route::get('/register/activate/{token}', 'AuthController@registeractivate')->nam
 Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/login', 'AuthController@loginprocess')->name('login.process');
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', 'AuthController@logout')->name('logout');
+});
+

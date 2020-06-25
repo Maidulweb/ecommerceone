@@ -13,6 +13,7 @@
 
 @if(session()->has('message'))
         <div class="alert alert-{{session('type')}}">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             {{session('message')}}
         </div>
 @endif
