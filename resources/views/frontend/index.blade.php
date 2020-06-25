@@ -15,7 +15,13 @@
                     <a href="{{ route('product.show', $product->slug) }}"><h5 class="card-title">{{ $product->title }}</h5></a>
 
                   <p class="card-text">{{ $product->description }}</p>
-                  <p class="card-text">{{ $product->price }}</p>
+                  <p class="card-text">
+                   @if($product->sale_price !== null && $product->sale_price > 0)
+                    <strike>BDT: {{ $product->price }}</strike><br> <strong>BDT:  {{ $product->sale_price }}</strong>
+                   @else
+                  <strong>BDT: {{ $product->price }}</strong>
+                   @endif
+                  </p>
 
                   <form action="{{ route('cart.add') }}" method="post">
                       @csrf
