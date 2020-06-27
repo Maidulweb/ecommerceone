@@ -23,6 +23,8 @@ Route::get('/cart/clear', 'CartController@clearcart')->name('cart.clear');
 
 
 
+
+
 Route::get('/register', 'AuthController@register')->name('register');
 Route::post('/register', 'AuthController@registerprocess')->name('register.process');
 
@@ -32,6 +34,12 @@ Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/login', 'AuthController@loginprocess')->name('login.process');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/dashboard', 'AuthController@dashboard')->name('dashboard');
     Route::get('/logout', 'AuthController@logout')->name('logout');
+
+    Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout');
+    Route::post('/cart/checkout', 'CartController@checkoutprocess')->name('checkout.process');
+    Route::get('/cart/details/{id}', 'CartController@checkoutdetails')->name('checkout.details');
 });
 

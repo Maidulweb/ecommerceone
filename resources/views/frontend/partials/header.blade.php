@@ -52,7 +52,7 @@
                 border-radius: 0 !important;
                 color: #fff;
             }
-            .form-control:focus {
+            .search-input .form-control:focus {
                 margin-right: 0 !important;
                 background: #4a8e8b !important;
                 border: transparent;

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 use App\Models\Category;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,7 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::select(['id', 'name', 'slug'])->get();
-        View::share('categories', $categories);
+        if(Schema::hasTable('categories')){
+            $categories = Category::select(['id', 'name', 'slug'])->get();
+            View::share('categories', $categories);
+        }
+
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Models\Order;
 use App\Notifications\UserEmailNotification;
 
 class AuthController extends Controller
@@ -107,5 +108,15 @@ class AuthController extends Controller
         Auth::logout();
         $this->setSuccess('You are logged Out.');
         return redirect('/');
+    }
+
+    public function dashboard ()
+    {
+        $user = auth()->user()->id;
+        $data = [];
+        $data['order'] = Order::where('user_id', $user)->get();
+
+        return view('frontend.auth.dasboard', $data);
+
     }
 }

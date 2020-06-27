@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('customer_name', 132);
-            $table->string('customer_email', 16);
+            $table->string('customer_email');
             $table->text('address');
             $table->string('city', 32);
             $table->string('postal_code', 16);
