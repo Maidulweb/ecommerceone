@@ -110,7 +110,7 @@ class CartController extends Controller
             'total_amount' => $total,
             'paid_amount' => $total,
           ]);
-
+         
           foreach($cart as $id=>$product){
               $order->products()->create([
                   'product_id' => $id,
@@ -121,7 +121,7 @@ class CartController extends Controller
 
           session()->forget(['total', 'cart']);
           $this->setSuccess('Checkout processed successfully.');
-          return redirect()->route('checkout.details');
+          return redirect()->route('dashboard');
     }
 
     public function checkoutdetails($id)
